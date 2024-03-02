@@ -11,6 +11,14 @@ defineProps({
   imgSrc: {
     type: String,
     required: true
+  },
+  width: {
+      type: String,
+      default: '100'  // default width
+  },
+  height: {
+      type: String,
+      default: '100'  // default height
   }
 })
 </script>
@@ -18,7 +26,7 @@ defineProps({
 <template>
   <div class="plantcomponent" :style="{ 'background-color': colour }">
     <div class="nametag">{{ name }}</div>
-    <img class="plantimage" :src="imgSrc" alt="Plant Image" width="100" height="100" />
+    <img class="plantimage" :src="imgSrc" :width="width" :height="height" alt="Plant Image" />
   </div>
 </template>
 
@@ -57,6 +65,7 @@ defineProps({
 
 .plantimage {
     position: absolute;
-    right: 15px;
+    right: -10px;
+    bottom: 10px;
 }
 </style>
