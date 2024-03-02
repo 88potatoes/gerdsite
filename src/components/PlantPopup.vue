@@ -1,4 +1,5 @@
 <script setup>
+import { ref, onUnmounted } from 'vue';
 defineProps({
   name: {
     type: String,
@@ -13,16 +14,49 @@ defineProps({
   }
 })
 
+const buttonClicked = ref(false);
+let resetTimeout = null; 
+
+const toggleButton = () => {
+  buttonClicked.value = !buttonClicked.value; 
+
+  // Clear existing timeout
+  if (resetTimeout) {
+    clearTimeout(resetTimeout);
+  }
+
+  // Revert button state after 3 seconds (3000 milliseconds)
+  resetTimeout = setTimeout(() => {
+    buttonClicked.value = false;
+  }, 3000); 
+};
+
+onUnmounted(() => {
+  if (resetTimeout) {
+    clearTimeout(resetTimeout);
+  }
+});
+
 const handleClick = (event) => {
-  event.stopPropogation
-}
+  event.stopPropagation();
+};
 </script>
 
 <template>
   <dialog class="popupPage" @click="close">
     <div class="plantPopup" @click.stop="handleClick">
+      <!-- Circular button -->
+      <button 
+        class="circularButton" 
+        @click="toggleButton" 
+        :style="{ backgroundColor: buttonClicked ? '#C7E7EC' : '#98d0d9' }"
+      >
+        <!-- Conditional Text -->
+        <span v-if="!buttonClicked" class="buttonText">Nourish me!</span>
+      </button>
+
       <div class="wateringText">
-        Watering <span class="boldText">{{ plantName }}</span>
+        Watering <span class="boldText">{{ name }}</span>
       </div>
       <img :src="imgSrc" alt="Plant Image" width="300" height="300" />
     </div>
@@ -67,16 +101,35 @@ dialog {
 
 .wateringText {
   position: absolute;
-  top: 50px;
-  text-align: center;
+  top: 30px;
+  text-align: left;
+  padding-left: 60px;
   width: 100%;
   color: white;
-  font-size: 2em; /* Adjust the size as needed, 2em is just an example and roughly equivalent to h1 size */
-  font-weight: normal; /* This makes the text less bold */
+  font-size: 2em; 
+  font-weight: normal; 
 }
 
 .boldText {
   font-weight: bold;
+}
+
+.circularButton {
+  cursor: pointer;
+  height: 145px; 
+  width: 145px; 
+  border-radius: 50%; 
+  border: 0px solid #fff; 
+  position: absolute;
+  left: 90px; 
+  top: 50%; 
+  transform: translateY(-50%); 
+  transition: background-color 2s ease;
+}
+
+.buttonText {
+  color: white;
+  font-weight: 600;
 }
 
 </style>
