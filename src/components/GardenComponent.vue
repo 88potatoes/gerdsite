@@ -27,6 +27,7 @@ import plant5 from "../plants/plant5.webp"
     width: 85%;
     height: 70%;
     gap: 30px;
+    padding-top: 30px;
     position: relative;
 }
 </style>
