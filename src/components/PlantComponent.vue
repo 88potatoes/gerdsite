@@ -48,6 +48,10 @@ const togglePopup = () => {
   box-shadow: -2px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+.plantcomponent:hover {
+    cursor: pointer;
+}
+
 .nametag {
   font-size: 400;
   position: relative;

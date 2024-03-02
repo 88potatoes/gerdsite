@@ -36,7 +36,7 @@ const handleClick = (event) => {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: rgba(192, 194, 201, 0.93);
+  background-image: linear-gradient(to right, #dbdcd9, #c0c2c9);
   z-index: 10;
   border-radius: 30px;
   margin: 0;
@@ -48,8 +48,9 @@ dialog {
 
 .popupPage {
   width: 100%;
-  height: 100%;
+  height: calc(100vh - 100px);
   position: fixed;
+  bottom: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
