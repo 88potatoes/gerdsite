@@ -1,5 +1,6 @@
 <script setup>
 import PlantComponent from './components/PlantComponent.vue'
+import SnailHeader from './components/SnailHeader.vue'
 </script>
 
 <template>
