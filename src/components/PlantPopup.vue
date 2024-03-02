@@ -44,8 +44,13 @@ onUnmounted(() => {
 });
 
 const handleClick = (event) => {
-  event.stopPropagation();
-};
+  event.stopPropogation
+}
+
+
+const getColor = (per) => {
+    return per == props.percent ? "#606060" : "white";
+}
 </script>
 
 <template>
@@ -144,24 +149,6 @@ dialog {
 
 .boldText {
   font-weight: bold;
-}
-
-.circularButton {
-  cursor: pointer;
-  height: 145px; 
-  width: 145px; 
-  border-radius: 50%; 
-  border: 0px solid #fff; 
-  position: absolute;
-  left: 90px; 
-  top: 50%; 
-  transform: translateY(-50%); 
-  transition: background-color 2s ease;
-}
-
-.buttonText {
-  color: white;
-  font-weight: 600;
 }
 
 .circularButton {
