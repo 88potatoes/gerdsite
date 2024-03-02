@@ -1,4 +1,5 @@
 <script setup>
+import PlantPopup from './PlantPopup.vue'
 defineProps({
   name: {
     type: String,
@@ -28,6 +29,7 @@ defineProps({
     <div class="nametag">{{ name }}</div>
     <img class="plantimage" :src="imgSrc" :width="width" :height="height" alt="Plant Image" />
   </div>
+  <PlantPopup :imgSrc="imgSrc" alt="Plant Image" />
 </template>
 
 <style>
@@ -51,7 +53,6 @@ defineProps({
   font-size: 400;
   position: relative;
   color: white;
-  z-index: 5;
   background-color: rgba(0, 0, 0, 0.5);
   width: 45%;
   text-align: center;

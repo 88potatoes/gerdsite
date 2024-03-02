@@ -25,7 +25,7 @@ import plant5 from "../plants/plant5.webp"
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(4, 1fr);
     width: 85%;
-    height: 70%;
+    height: calc(100vh - 300px);
     gap: 30px;
     padding-top: 30px;
     position: relative;
