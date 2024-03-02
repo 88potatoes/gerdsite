@@ -21,5 +21,6 @@ import PlantComponent from "./PlantComponent.vue"
     grid-template-rows: repeat(4, 1fr);
     width: 85%;
     gap: 30px;
+    padding-top: 30px;
 }
 </style>

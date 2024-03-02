@@ -1,50 +1,24 @@
 <template>
-    <header>
-       <!-- Your header content goes here -->
-       <nav>
-         <ul>
-           <li><a href="#">Home</a></li>
-           <li><a href="#">About</a></li>
-           <li><a href="#">Contact</a></li>
-         </ul>
-       </nav>
-    </header>
-   </template>
-   
-   <script>
-   export default {
-    name: 'SnailHeader',
-    data() {
-       return {
-         // Add any data properties you need for your header
-       };
-    },
-    methods: {
-       // Add methods for handling events in your header
-    },
-   };
-   </script>
-   
-   <style scoped>
-   /* Add your CSS styles for the SnailHeader component here */
-   header {
-    background-color: #f8f9fa;
-    padding: 10px;
-   }
-   
-   nav ul {
-    list-style-type: none;
-    padding: 0;
-   }
-   
-   nav ul li {
-    display: inline;
-    margin-right: 10px;
-   }
-   
-   nav ul li a {
-    text-decoration: none;
-    color: #333;
-   }
-   </style>
-   
+  <header>
+    <img src="@/GerdaLogo.png" alt="Header Image" class="header-image">
+  </header>
+ </template>
+ 
+ <style scoped>
+ header {
+  width: 100vw;
+  background: linear-gradient(to right, #B1CA9F, #B1CA9F, #7FAF5D);
+  margin: 0;
+  padding: 0;
+  text-align: center;
+ }
+
+ .header-image {
+ width: 10%; 
+ height: 10%; 
+ object-fit: cover; 
+ float: left;
+ margin-left: 20px;
+}
+ </style>
+ 

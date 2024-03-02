@@ -5,6 +5,7 @@ import SnailHeader from './components/SnailHeader.vue'
 
 <template>
   <div class="main">
+    <SnailHeader />
     <GardenComponent />
   </div>
 </template>
