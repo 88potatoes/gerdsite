@@ -69,6 +69,6 @@ const togglePopup = () => {
 
 .plantimage {
   position: absolute;
-  right: 15px;
+  right: -10px;
 }
 </style>
