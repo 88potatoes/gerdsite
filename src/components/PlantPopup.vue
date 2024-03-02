@@ -23,6 +23,7 @@ const handleClick = (event) => {
     <div class="plantPopup" @click.stop="handleClick">
       <div>{{ name }}</div>
       <img :src="imgSrc" alt="Plant Image" width="300" height="300" />
+      <div class="closebutton" @click="close">X</div>
     </div>
   </dialog>
 </template>
@@ -40,6 +41,7 @@ const handleClick = (event) => {
   z-index: 10;
   border-radius: 30px;
   margin: 0;
+  border: 1px solid #e4e5e1;
 }
 
 dialog {
@@ -61,5 +63,23 @@ dialog {
   margin: 0;
   padding: 0;
   z-index: 10;
+}
+
+.closebutton {
+    color: white;
+    background-color: rgb(53, 50, 50);
+    width: 20px;
+    height: 20px;
+    padding: 15px;
+    text-align: center;
+    border-radius: 30px;
+    font-size: large;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+
+.closebutton:hover {
+    cursor: pointer;
 }
 </style>
