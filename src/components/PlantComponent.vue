@@ -1,5 +1,6 @@
 <script setup>
 import PlantPopup from './PlantPopup.vue'
+import { ref } from "vue";
 defineProps({
   name: {
     type: String,
@@ -12,24 +13,22 @@ defineProps({
   imgSrc: {
     type: String,
     required: true
-  },
-  width: {
-      type: String,
-      default: '100'  // default width
-  },
-  height: {
-      type: String,
-      default: '100'  // default height
   }
 })
+
+const popupShowing = ref(false);
+const togglePopup = () => {
+    popupShowing.value = !popupShowing.value;
+    console.log(popupShowing);
+}
 </script>
 
 <template>
-  <div class="plantcomponent" :style="{ 'background-color': colour }">
+  <div class="plantcomponent" :style="{ 'background-color': colour }" @click="togglePopup">
+    <img class="plantimage" :src="imgSrc" alt="Plant Image" width="100" height="100" />
     <div class="nametag">{{ name }}</div>
-    <img class="plantimage" :src="imgSrc" :width="width" :height="height" alt="Plant Image" />
   </div>
-  <PlantPopup :imgSrc="imgSrc" alt="Plant Image" />
+  <PlantPopup :imgSrc="imgSrc" alt="Plant Image" :name="name" v-if="popupShowing" :close="togglePopup"/>
 </template>
 
 <style>
@@ -65,8 +64,7 @@ defineProps({
 }
 
 .plantimage {
-    position: absolute;
-    right: -10px;
-    bottom: 10px;
+  position: absolute;
+  right: 15px;
 }
 </style>

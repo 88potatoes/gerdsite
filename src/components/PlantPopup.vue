@@ -8,18 +8,20 @@ defineProps({
     type: String,
     required: true
   },
-  open: {
-    type: Boolean,
-    required: true
+  close: {
+    type: Function
   }
-
 })
 
+const handleClick = (event) => {
+  event.stopPropogation
+}
 </script>
 
 <template>
-  <dialog class="popupPage">
-    <div class="plantPopup">
+  <dialog class="popupPage" @click="close">
+    <div class="plantPopup" @click.stop="handleClick">
+      <div>{{ name }}</div>
       <img :src="imgSrc" alt="Plant Image" width="300" height="300" />
     </div>
   </dialog>
@@ -38,11 +40,10 @@ defineProps({
   z-index: 10;
   border-radius: 30px;
   margin: 0;
-
 }
 
 dialog {
-    border: none;
+  border: none;
 }
 
 .popupPage {
@@ -53,11 +54,11 @@ dialog {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: rgba(255, 255, 255, 0.2); 
+  background: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(8px);
   box-shadow: -2px 2px 4px rgba(0, 0, 0, 0.1);
   margin: 0;
   padding: 0;
-
+  z-index: 10;
 }
 </style>
