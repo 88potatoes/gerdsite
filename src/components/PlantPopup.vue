@@ -1,6 +1,5 @@
 <script setup>
-import { ref } from 'vue'
-defineProps({
+const props = defineProps({
   name: {
     type: String,
     required: true
@@ -11,6 +10,12 @@ defineProps({
   },
   close: {
     type: Function
+  },
+  percent: {
+    type: String
+  },
+  setPercent: {
+    type: Function
   }
 })
 
@@ -18,12 +23,9 @@ const handleClick = (event) => {
   event.stopPropogation
 }
 
-const percentage = ref('0%')
-const setPercentage = (event) => {
-  percentage.value = event.target.innerText
-}
+
 const getColor = (per) => {
-    return per == percentage.value ? "#606060" : "white";
+    return per == props.percent ? "#606060" : "white";
 }
 </script>
 
@@ -36,11 +38,11 @@ const getColor = (per) => {
       <img :src="imgSrc" alt="Plant Image" width="300" height="300" />
       <div class="closebutton" @click="close">X</div>
       <div class="levels">
-        <div @click="setPercentage" class="percentageButton" :style="{color: getColor('0%')}">0%</div>
-        <div @click="setPercentage" class="percentageButton" :style="{color: getColor('25%')}">25%</div>
-        <div @click="setPercentage" class="percentageButton" :style="{color: getColor('50%')}">50%</div>
-        <div @click="setPercentage" class="percentageButton" :style="{color: getColor('75%')}">75%</div>
-        <div @click="setPercentage" class="percentageButton" :style="{color: getColor('100%')}">100%</div>
+        <div @click="setPercent" class="percentageButton" :style="{color: getColor('0%')}">0%</div>
+        <div @click="setPercent" class="percentageButton" :style="{color: getColor('25%')}">25%</div>
+        <div @click="setPercent" class="percentageButton" :style="{color: getColor('50%')}">50%</div>
+        <div @click="setPercent" class="percentageButton" :style="{color: getColor('75%')}">75%</div>
+        <div @click="setPercent" class="percentageButton" :style="{color: getColor('100%')}">100%</div>
       </div>
     </div>
   </dialog>

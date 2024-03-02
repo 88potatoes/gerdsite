@@ -1,6 +1,6 @@
 <script setup>
 import PlantPopup from './PlantPopup.vue'
-import { ref } from "vue";
+import { ref } from 'vue'
 defineProps({
   name: {
     type: String,
@@ -16,10 +16,15 @@ defineProps({
   }
 })
 
-const popupShowing = ref(false);
+const popupShowing = ref(false)
 const togglePopup = () => {
-    popupShowing.value = !popupShowing.value;
-    console.log(popupShowing);
+  popupShowing.value = !popupShowing.value
+  console.log(popupShowing)
+}
+
+const percentage = ref('0%')
+const setPercentage = (event) => {
+  percentage.value = event.target.innerText
 }
 </script>
 
@@ -28,7 +33,15 @@ const togglePopup = () => {
     <img class="plantimage" :src="imgSrc" alt="Plant Image" width="100" height="100" />
     <div class="nametag">{{ name }}</div>
   </div>
-  <PlantPopup :imgSrc="imgSrc" alt="Plant Image" :name="name" v-if="popupShowing" :close="togglePopup"/>
+  <PlantPopup
+    :imgSrc="imgSrc"
+    alt="Plant Image"
+    :name="name"
+    v-if="popupShowing"
+    :close="togglePopup"
+    :percent="percentage"
+    :setPercent="setPercentage"
+  />
 </template>
 
 <style>
@@ -49,7 +62,7 @@ const togglePopup = () => {
 }
 
 .plantcomponent:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .nametag {
