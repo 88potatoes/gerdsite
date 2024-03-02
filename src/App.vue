@@ -9,7 +9,6 @@ import plant1 from "./plants/plant1.webp"
   <div class="main">
     <SnailHeader />
     <GardenComponent />
-    <!-- <PlantPopup :imgSrc="plant1" name="Plant 1"/> -->
   </div>
 </template>
 

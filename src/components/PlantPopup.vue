@@ -34,9 +34,10 @@ defineProps({
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: rgba(192, 194, 201, 0.98);
+  background-color: rgba(192, 194, 201, 0.93);
   z-index: 10;
   border-radius: 30px;
+  margin: 0;
 
 }
 
@@ -55,6 +56,8 @@ dialog {
   background: rgba(255, 255, 255, 0.2); 
   backdrop-filter: blur(8px);
   box-shadow: -2px 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 0;
+  padding: 0;
 
 }
 </style>
