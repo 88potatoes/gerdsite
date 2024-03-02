@@ -11,7 +11,7 @@ import plant5 from "../plants/plant5.webp"
     <div class="garden">
 
         <PlantComponent name="Plant 1" colour="#7F9C72" :imgSrc="plant1"/>
-        <PlantComponent name="Plant 2" colour="#A7E45A" :imgSrc="plant2" width=200 height=200/>
+        <PlantComponent name="Plant 2" colour="#A7E45A" :imgSrc="plant2"/>
         <PlantComponent name="Plant 3" colour="#AFF0B5" :imgSrc="plant3"/>
         <PlantComponent name="Plant 4" colour="#8EC58A" :imgSrc="plant4"/>
         <PlantComponent name="Plant 5" colour="#84CCBB" :imgSrc="plant5"/>
@@ -27,6 +27,5 @@ import plant5 from "../plants/plant5.webp"
     width: 85%;
     height: 70%;
     gap: 30px;
-    position: relative;
 }
 </style>
