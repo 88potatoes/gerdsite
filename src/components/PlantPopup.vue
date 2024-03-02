@@ -158,7 +158,7 @@ dialog {
   border-radius: 50%; 
   border: 0px solid #fff; 
   position: absolute;
-  left: 90px; 
+  left: 15%; 
   top: 50%; 
   transform: translateY(-50%); 
   transition: background-color 2s ease;
@@ -167,6 +167,7 @@ dialog {
 .buttonText {
   color: white;
   font-weight: 600;
+  font-size: 1.3em;
 }
 
 .closebutton {
