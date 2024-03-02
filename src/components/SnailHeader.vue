@@ -1,24 +1,24 @@
 <template>
   <header>
-    <img src="@/GerdaLogo.png" alt="Header Image" class="header-image">
+    <img src="@/GerdaLogo.png" alt="Header Image" class="header-image" />
   </header>
- </template>
- 
- <style scoped>
- header {
+</template>
+
+<style scoped>
+header {
   width: 100vw;
-  background: linear-gradient(to right, #B1CA9F, #B1CA9F, #7FAF5D);
+  background: linear-gradient(to right, #b1ca9f, #b1ca9f, #7faf5d);
   margin: 0;
   padding: 0;
   text-align: center;
- }
-
- .header-image {
- width: 10%; 
- height: 10%; 
- object-fit: cover; 
- float: left;
- margin-left: 20px;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
- </style>
- 
+
+.header-image {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  float: left;
+  margin-left: 20px;
+}
+</style>
