@@ -20,6 +20,9 @@ defineProps({
 <template>
   <dialog class="popupPage">
     <div class="plantPopup">
+      <div class="wateringText">
+        Watering <span class="boldText">{{ plantName }}</span>
+      </div>
       <img :src="imgSrc" alt="Plant Image" width="300" height="300" />
     </div>
   </dialog>
@@ -58,6 +61,20 @@ dialog {
   box-shadow: -2px 2px 4px rgba(0, 0, 0, 0.1);
   margin: 0;
   padding: 0;
+  }
 
+.wateringText {
+  position: absolute;
+  top: 50px;
+  text-align: center;
+  width: 100%;
+  color: white;
+  font-size: 2em; /* Adjust the size as needed, 2em is just an example and roughly equivalent to h1 size */
+  font-weight: normal; /* This makes the text less bold */
 }
+
+.boldText {
+  font-weight: bold;
+}
+
 </style>
