@@ -1,9 +1,17 @@
 <script setup>
-import PlantComponent from './components/PlantComponent.vue'
+import GardenComponent from './components/GardenComponent.vue'
 </script>
 
 <template>
-  <PlantComponent name="BONSAI"/>
-  <PlantComponent name="BONSAI"/>
-  <PlantComponent name="BONSAI"/>
+  <div class="main">
+    <GardenComponent />
+  </div>
 </template>
+
+<style>
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+</style>
