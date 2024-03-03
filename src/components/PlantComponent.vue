@@ -31,6 +31,9 @@ const setPercentage = (event) => {
 <template>
   <div class="plantcomponent" :style="{ 'background-color': colour }" @click="togglePopup">
     <div class="edit"><strong>…</strong></div>
+    <div class="perc">
+      {{ percentage }}
+    </div>
     <img class="plantimage" :src="imgSrc" alt="Plant Image" width="100" height="100" />
     <div class="nametag">{{ name }}</div>
   </div>
@@ -97,5 +100,19 @@ const setPercentage = (event) => {
   font-size: large;
   top: 20px;
   left: 20px;
+}
+
+.perc {
+  font-size: 400;
+  position: absolute;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 60px;
+  border-radius: 20px;
+  text-align: center;
+  font-size: large;
+  top: 63px;
+  left: 20px;
+  padding: 3px;
 }
 </style>
