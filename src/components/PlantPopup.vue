@@ -107,8 +107,7 @@ const getColor = (per) => {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
-  background-image: linear-gradient(to right, #999999, #7c7b7b);
+  background-image: linear-gradient(to right, rgba(153, 153, 153, 0.8), rgba(124, 123, 123, 0.8));
   z-index: 10;
   border-radius: 30px;
   margin: 0;
