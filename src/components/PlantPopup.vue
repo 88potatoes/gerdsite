@@ -63,11 +63,11 @@ const getColor = (per) => {
         :style="{ backgroundColor: buttonClicked ? '#C7E7EC' : '#98d0d9' }"
       >
         <!-- Conditional Text -->
-        <span v-if="!buttonClicked" class="buttonText">Nourish me!</span>
+        <span v-if="!buttonClicked" class="buttonText">Water me!</span>
       </button>
 
       <div class="wateringText">
-        Watering <span class="boldText">{{ name }}</span>
+        <span class="boldText">{{ name }}</span>
       </div>
       <img :src="imgSrc" alt="Plant Image" width="300" height="300" />
       <div class="closebutton" @click="close">X</div>
@@ -90,7 +90,8 @@ const getColor = (per) => {
   display: flex;
   justify-content: space-around;
   width: 350px;
-  background-image: linear-gradient(to right, #bcbdbc, #c0c2c9);
+  background-image: linear-gradient(to right, rgb(188, 188, 188), rgb(192, 194, 201));
+  /* background-color: transparent; */
   padding: 15px;
   border-radius: 25px;
   color: white;
@@ -108,7 +109,7 @@ const getColor = (per) => {
   align-items: center;
   justify-content: center;
 
-  background-image: linear-gradient(to right, #999999, #7c7b7b);
+  background-image: linear-gradient(to right, rgba(153, 153, 153), rgba(123, 123, 123));
   z-index: 10;
   border-radius: 30px;
   margin: 0;
