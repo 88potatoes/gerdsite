@@ -1,6 +1,8 @@
 # gerdproject
+Gerda was developed using Vue 3. 
+Try out our web app here: https://rare-cherries.surge.sh/
 
-This template should help get you started developing with Vue 3 in Vite.
+If you'd like to make any changes to our project, you can do so on your local machine! The following are the recommended set up steps:
 
 ## Recommended IDE Setup
 
