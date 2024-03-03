@@ -1,5 +1,5 @@
 <script setup>
-import { ref, onUnmounted } from 'vue';
+import { ref, onUnmounted } from 'vue'
 const props = defineProps({
   name: {
     type: String,
@@ -20,36 +20,35 @@ const props = defineProps({
   }
 })
 
-const buttonClicked = ref(false);
-let resetTimeout = null; 
+const buttonClicked = ref(false)
+let resetTimeout = null
 
 const toggleButton = () => {
-  buttonClicked.value = !buttonClicked.value; 
+  buttonClicked.value = !buttonClicked.value
 
   // Clear existing timeout
   if (resetTimeout) {
-    clearTimeout(resetTimeout);
+    clearTimeout(resetTimeout)
   }
 
   // Revert button state after 3 seconds (3000 milliseconds)
   resetTimeout = setTimeout(() => {
-    buttonClicked.value = false;
-  }, 3000); 
-};
+    buttonClicked.value = false
+  }, 3000)
+}
 
 onUnmounted(() => {
   if (resetTimeout) {
-    clearTimeout(resetTimeout);
+    clearTimeout(resetTimeout)
   }
-});
+})
 
 const handleClick = (event) => {
   event.stopPropogation
 }
 
-
 const getColor = (per) => {
-    return per == props.percent ? "#606060" : "white";
+  return per == props.percent ? '#606060' : 'white'
 }
 </script>
 
@@ -57,9 +56,9 @@ const getColor = (per) => {
   <dialog class="popupPage" @click="close">
     <div class="plantPopup" @click.stop="handleClick">
       <!-- Circular button -->
-      <button 
-        class="circularButton" 
-        @click="toggleButton" 
+      <button
+        class="circularButton"
+        @click="toggleButton"
         :style="{ backgroundColor: buttonClicked ? '#C7E7EC' : '#98d0d9' }"
       >
         <span v-if="!buttonClicked" class="buttonText">Water me!</span>
@@ -70,12 +69,48 @@ const getColor = (per) => {
       </div>
       <img :src="imgSrc" alt="Plant Image" width="300" height="300" />
       <div class="closebutton" @click="close">X</div>
+      <!-- <div class="plant">
+        <div>
+            <strong>Species: </strong>Cactus
+        </div>
+    </div> -->
+      <div class="plantinfo">
+        <div>
+          <strong>Species: </strong>
+          <div>Cactus</div>
+        </div>
+        <br>
+        <div>
+          <strong>Last watered: </strong>
+          <div>Yesterday 2:31pm</div>
+        </div>
+        <br>
+        <div>
+          <strong>Average water intake: </strong>
+          <div>50ml/day</div>
+        </div>
+        <br>
+        <div>
+          <strong>Recommended water intake: </strong>
+          <div>50ml/day</div>
+        </div>
+      </div>
       <div class="levels">
-        <div @click="setPercent" class="percentageButton" :style="{color: getColor('0%')}">0%</div>
-        <div @click="setPercent" class="percentageButton" :style="{color: getColor('25%')}">25%</div>
-        <div @click="setPercent" class="percentageButton" :style="{color: getColor('50%')}">50%</div>
-        <div @click="setPercent" class="percentageButton" :style="{color: getColor('75%')}">75%</div>
-        <div @click="setPercent" class="percentageButton" :style="{color: getColor('100%')}">100%</div>
+        <div @click="setPercent" class="percentageButton" :style="{ color: getColor('0%') }">
+          0%
+        </div>
+        <div @click="setPercent" class="percentageButton" :style="{ color: getColor('25%') }">
+          25%
+        </div>
+        <div @click="setPercent" class="percentageButton" :style="{ color: getColor('50%') }">
+          50%
+        </div>
+        <div @click="setPercent" class="percentageButton" :style="{ color: getColor('75%') }">
+          75%
+        </div>
+        <div @click="setPercent" class="percentageButton" :style="{ color: getColor('100%') }">
+          100%
+        </div>
       </div>
     </div>
   </dialog>
@@ -97,6 +132,27 @@ const getColor = (per) => {
   border: 1px solid #dbdcd9;
   position: absolute;
   bottom: -23px;
+}
+
+.plant {
+  border: 1px solid white;
+  height: 65%;
+  width: 200px;
+  border-radius: 20px;
+  padding: 10px;
+  color: white;
+  position: absolute;
+}
+
+.plantinfo {
+  border: 1px solid white;
+  height: 50%;
+  width: 200px;
+  border-radius: 20px;
+  padding: 10px;
+  color: white;
+  position: absolute;
+  right: 100px;
 }
 
 .plantPopup {
@@ -142,8 +198,8 @@ dialog {
   padding-left: 60px;
   width: 100%;
   color: white;
-  font-size: 2em; 
-  font-weight: normal; 
+  font-size: 2em;
+  font-weight: normal;
 }
 
 .boldText {
@@ -152,14 +208,14 @@ dialog {
 
 .circularButton {
   cursor: pointer;
-  height: 145px; 
-  width: 145px; 
-  border-radius: 50%; 
-  border: 0px solid #fff; 
+  height: 145px;
+  width: 145px;
+  border-radius: 50%;
+  border: 0px solid #fff;
   position: absolute;
-  left: 15%; 
-  top: 50%; 
-  transform: translateY(-50%); 
+  left: 15%;
+  top: 50%;
+  transform: translateY(-50%);
   transition: background-color 2s ease;
 }
 
