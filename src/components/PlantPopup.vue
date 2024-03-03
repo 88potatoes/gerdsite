@@ -211,7 +211,7 @@ dialog {
   height: 145px;
   width: 145px;
   border-radius: 50%;
-  border: 0px solid #fff;
+  border: 1px solid #fff;
   position: absolute;
   left: 15%;
   top: 50%;
