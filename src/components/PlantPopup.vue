@@ -62,7 +62,6 @@ const getColor = (per) => {
         @click="toggleButton" 
         :style="{ backgroundColor: buttonClicked ? '#C7E7EC' : '#98d0d9' }"
       >
-        <!-- Conditional Text -->
         <span v-if="!buttonClicked" class="buttonText">Water me!</span>
       </button>
 

@@ -84,6 +84,6 @@ header {
 }
 
 .hamburger-menu span:last-child {
-  margin-bottom: 0; /* Removes the margin from the last line */
+  margin-bottom: 0;
 }
 </style>
