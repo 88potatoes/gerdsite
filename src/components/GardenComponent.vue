@@ -24,11 +24,11 @@ const turnAdded = () => {
     <PlantComponent name="POOKIE" colour="#AFF0B5" :imgSrc="plant3" />
     <PlantComponent name="🌵" colour="#8EC58A" :imgSrc="plant4" />
     <PlantComponent name="Mans" colour="#84CCBB" :imgSrc="plant5" />
-    <div @click="turnAdded" v-if="!added" class="addNew">
+    <PlantComponent name="007" colour="#D7E0D5" :imgSrc="plant1" v-if="added" />
+    <div @click="turnAdded" class="addNew">
       <div><h1>+</h1></div>
       <div><strong>Add new</strong></div>
     </div>
-    <PlantComponent name="007" colour="#D7E0D5" :imgSrc="plant1" v-if="added" />
   </div>
 </template>
 
