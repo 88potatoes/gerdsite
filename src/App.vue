@@ -18,5 +18,6 @@ import plant1 from "./plants/plant1.webp"
   flex-direction: column;
   align-items: center;
   height: 100vh;
+  background-image: linear-gradient(to right, #ffffff, #f8ffe9);
 }
 </style>
