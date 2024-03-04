@@ -145,8 +145,12 @@ const getColor = (per) => {
 }
 
 .plantinfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
   border: 1px solid white;
-  height: 50%;
+  min-height: 50%;
   width: 200px;
   border-radius: 20px;
   padding: 10px;
